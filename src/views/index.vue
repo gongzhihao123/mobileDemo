@@ -1,22 +1,20 @@
 <template>
-  <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png">
-    <div class="test">
-        <p class="hello" @click="getApi">Hello</p>
-    </div>
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <div class="index">
+    <!-- <p class="hello" @click="getApi">Hello</p> -->
+    <router-view></router-view>
+    <Footer></Footer>
   </div>
 </template>
 
 <script>
 // @ is an alias to /src
-import HelloWorld from '@/components/HelloWorld.vue'
+import Footer from './../components/common/footer'
 import { apiTest, apiList } from '@/services/api/index'
 
 export default {
-  name: 'Home',
+  name: 'index',
   components: {
-    HelloWorld
+    Footer
   },
   methods: {
     getApi () {
@@ -37,21 +35,17 @@ export default {
     }
   },
   mounted () {
-    this.getApi()
-    this.getList()
   }
 }
 </script>
 
-<style>
-  /* rootValue: 75 */
-  .test{
-    width:320px;
-    height:160px;
-    background-color: bisque;
-    text-align: center；
-}
-.hello{
+<style lang="scss">
+.index {
+  height: 100%;
+  .hello{
+    font-size: 18px;
     color:red;
+  }
 }
+
 </style>
