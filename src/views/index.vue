@@ -9,7 +9,7 @@
 <script>
 // @ is an alias to /src
 import Footer from './../components/common/footer'
-import { apiTest, apiList } from '@/services/api/index'
+import { apiList } from '@/services/api/index'
 
 export default {
   name: 'index',
