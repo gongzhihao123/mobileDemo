@@ -36,7 +36,7 @@ module.exports = {
     //   }
     // },
     // 启用 CSS modules for all css / pre-processor files.
-    requireModuleExtension: false
+    requireModuleExtension: true
   },
   // 是一个函数，允许对内部的 webpack 配置进行更细粒度的修改。
   chainWebpack: (config) => {
@@ -59,12 +59,12 @@ module.exports = {
     open: false, // 配置自动启动浏览器  open: 'Google Chrome'-默认启动谷歌
     // 配置多个代理
     proxy: {
-      '/repair-portal': {
-        target: 'https://www.meetyuu.com/repair-master-api',
+      '/activity': {
+        target: 'https://jk.meetyuu.com/',
         ws: true, // 代理的WebSockets
         changeOrigin: true, // 允许websockets跨域
         pathRewrite: {
-          '^/repair-portal': ''
+          '^/activity': '/activity'
         }
       }
     }

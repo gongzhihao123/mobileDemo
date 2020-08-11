@@ -9,6 +9,13 @@ import './lib/rem.js'
 import './assets/style/index.css'
 
 import FastClick from 'fastclick'
+import 'vant/lib/index.css'
+
+import {
+  Toast
+} from 'Vant'
+Vue
+  .use(Toast)
 
 FastClick.attach(document.body)
 

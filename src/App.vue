@@ -16,7 +16,6 @@ export default {
 <style lang="scss">
 #app {
   height: 100%;
-  margin-bottom: 60px;
 }
 *{
   touch-action: pan-y;

@@ -14,16 +14,21 @@ const routes = [
     path: '/',
     name: 'index',
     component: index,
+    redirect: '/home',
     children: [
       { path: '/home', name: 'home', component: () => import('./../views/home/index.vue') },
       { path: '/list', name: 'list', component: () => import('./../views/list/index.vue') }
     ]
+  },
+  {
+    path: '/login',
+    name: 'login',
+    component: () => import('./../views/login/index.vue')
   }
 ]
 
 const router = new VueRouter({
-  mode: 'history',
-  base: process.env.BASE_URL,
+  // mode: 'history',
   routes
 })
 

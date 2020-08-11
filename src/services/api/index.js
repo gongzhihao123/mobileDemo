@@ -1,11 +1,11 @@
 import { request } from '@/services/request'
 // import queryString from 'querystring'
 
-export function apiTest (param) {
+export function apiLogin (param) {
   return request({
-    url: '/repair-portal/userInfo',
-    method: 'get',
-    param: param,
+    url: '/api/login/login',
+    method: 'post',
+    data: param,
     isNeedLogin: true
   })
     .then(res => res.data)

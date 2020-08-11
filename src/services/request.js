@@ -6,12 +6,12 @@
 import axios from 'axios'
 import router from './../router'
 import * as config from './../config'
-import queryString from 'querystring'
+// import queryString from 'querystring'
 import { Toast } from 'vant'
 // import { getToken } from './common.js'
 const request = axios.create({
   baseURL: config.default, // 获取基础公共路径,
-  header: 'Content-Security-Policy: upgrade-insecure-requests',
+  header: 'content-type:application/json;charset=utf-8',
   timeout: 10000 // 允许超时时限设置10s
 })
 
@@ -35,7 +35,8 @@ request.interceptors.request.use(function (config) {
       config.method === 'delete' ||
       config.method === 'patch'
   ) {
-    config.data = queryString.stringify(config.data)
+    config.headers['content-type'] = 'application/json;charset=utf-8'
+    config.data = JSON.stringify(config.data)
   } else {
     if (!config.data) {
       config.data = ''
